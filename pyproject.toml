@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authnexus"
+version = "0.1.0"
+description = "Modern authentication with built-in security monitoring"
+authors = [{name = "Satwik Mishra", email = "satwikmishhra46@gmail.com"}]
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "pydantic>=2.0",
+    "python-jose[cryptography]>=3.3",
+    "webauthn>=1.2.0",
+    "httpx>=0.24"
+]
+
+[project.optional-dependencies]
+fastapi = ["fastapi>=0.95"]
+flask = ["flask>=2.0"]
+
+[project.urls]
+Documentation = "https://authnexus.readthedocs.io"
+Source = "https://github.com/satwikmishra11/authnexus"
