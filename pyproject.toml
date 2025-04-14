@@ -3,11 +3,11 @@ requires = ["setuptools>=65", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "authnexus"
+name = "AuthNexus"
 version = "0.1.0"
 description = "Modern authentication with built-in security monitoring"
-authors = [{name = "Satwik Mishra", email = "satwikmishhra46@gmail.com"}]
-license = {text = "MIT"}
+authors = [{name = "Satwik Mishra", email = "satwikmishra46@gmail.com"}]
+license = {text = "AGPL 3.0"}
 requires-python = ">=3.8"
 dependencies = [
     "pydantic>=2.0",
