@@ -3,23 +3,58 @@ requires = ["setuptools>=65", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "AuthNexus"
+name = "authnexus"
 version = "0.1.0"
-description = "Modern authentication with built-in security monitoring"
-authors = [{name = "Satwik Mishra", email = "satwikmishra46@gmail.com"}]
-license = {text = "AGPL 3.0"}
+authors = [
+    {name = "Your Name", email = "security@yourdomain.com"},
+]
+description = "Enterprise-Grade Authentication Framework with Modern Security Protocols"
+readme = "README.md"
 requires-python = ">=3.8"
+license = {text = "AGPL-3.0"}
+keywords = ["authentication", "security", "webauthn", "oauth", "jwt"]
+classifiers = [
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Framework :: FastAPI",
+    "Framework :: Flask",
+]
 dependencies = [
-    "pydantic>=2.0",
+    "cryptography>=42.0",
     "python-jose[cryptography]>=3.3",
     "webauthn>=1.2.0",
-    "httpx>=0.24"
+    "pydantic>=2.0",
+    "httpx>=0.24",
+    "typing-extensions>=4.0",
 ]
 
 [project.optional-dependencies]
-fastapi = ["fastapi>=0.95"]
-flask = ["flask>=2.0"]
+security = [
+    "bandit>=1.7",
+    "safety>=2.3",
+    "semgrep>=1.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.0.28",
+    "mypy>=1.0",
+    "build>=0.10",
+]
 
 [project.urls]
+Homepage = "https://github.com/yourusername/authnexus"
 Documentation = "https://authnexus.readthedocs.io"
-Source = "https://github.com/satwikmishra11/authnexus"
+Changelog = "https://github.com/yourusername/authnexus/releases"
+Issues = "https://github.com/yourusername/authnexus/issues"
+
+[project.scripts]
+authnexus-cli = "authnexus.cli:main"
