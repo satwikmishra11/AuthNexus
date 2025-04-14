@@ -1,4 +1,4 @@
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .core.auth_manager import AuthNexus
 from .core.webauthn import WebAuthnManager
