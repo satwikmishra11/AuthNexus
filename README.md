@@ -4,8 +4,8 @@ Enterprise-Grade Authentication for Modern Python Applications
 
 [![PyPI Version](https://img.shields.io/pypi/v/authnexus)](https://pypi.org/project/authnexus/)
 [![License](https://img.shields.io/badge/License-AGPL--3.0-blue)](https://opensource.org/licenses/AGPL-3.0)
-[![Build Status](https://github.com/yourusername/authnexus/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/authnexus/actions)
-[![Coverage](https://codecov.io/gh/yourusername/authnexus/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/authnexus)
+[![Build Status](https://github.com/satwikmishra11/authnexus/actions/workflows/ci.yml/badge.svg)](https://github.com/satwikmishra11/authnexus/actions)
+[![Coverage](https://codecov.io/gh/satwikmishra11/authnexus/branch/main/graph/badge.svg)](https://codecov.io/gh/satwikmishra11/authnexus)
 [![Security Scan](https://img.shields.io/badge/Security-Trivy%20%7C%20Bandit%20%7C%20Safety-informational)](SECURITY.md)
 
 AuthNexus is a security-focused authentication library implementing modern standards with enterprise-grade features.
