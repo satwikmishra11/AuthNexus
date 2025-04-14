@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "authnexus"
-version = "0.1.0"
+version = ""0.1.1""
 authors = [
-    {name = "Your Name", email = "security@yourdomain.com"},
+    {name = "Satwik Mishra", email = "satwikmishra46@gmail.com"},
 ]
 description = "Enterprise-Grade Authentication Framework with Modern Security Protocols"
 readme = "README.md"
@@ -51,10 +51,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/authnexus"
+Homepage = "https://github.com/satwikmishra11/authnexus"
 Documentation = "https://authnexus.readthedocs.io"
-Changelog = "https://github.com/yourusername/authnexus/releases"
-Issues = "https://github.com/yourusername/authnexus/issues"
+Changelog = "https://github.com/satwikmishra11/authnexus/releases"
+Issues = "https://github.com/satwikmishra11/authnexus/issues"
 
 [project.scripts]
 authnexus-cli = "authnexus.cli:main"
