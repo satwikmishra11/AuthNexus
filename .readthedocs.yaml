@@ -1,0 +1,70 @@
+version: 2
+
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+
+sphinx:
+  configuration: docs/source/conf.py
+  fail_on_warning: true
+
+formats:
+  - pdf
+  - epub
+
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+  system_packages: true
+
+mkdocs:
+  configuration: mkdocs.yml  # Remove if not using MkDocs
+
+conda:
+  environment: environment.yml  # Remove if not using Conda
+
+# Required for API documentation generation
+submodules:
+  include:
+    - src/authnexus
+
+# Build documentation from both branches and tags
+tags:
+  filters:
+    branches: only [main, stable]
+    tags: all
+
+# Documentation analytics
+analytics:
+  enabled: true
+  id: 337774086
+
+# Advanced build customization
+build:
+  image: latest
+
+# Documentation versions
+versions:
+  - latest
+  - stable
+
+# Environment variables
+env:
+  AUTHNEXUS_DOCS_MODE: production
+  PYTHONPATH: $PYTHONPATH:./src
+
+# Documentation preview settings
+pre_build:
+  commands:
+    - pip install -r docs/requirements.txt
+    - python -m sphinx_autobuild docs/source docs/build/html
+
+# Post-build hooks
+post_build:
+  commands:
+    - echo "Documentation build completed successfully!"
+    - curl -X POST -d '{"status":"success"}' $WEBHOOK_URL
