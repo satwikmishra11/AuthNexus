@@ -4,9 +4,6 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
-  env:
-    - AUTHNEXUS_DOCS_MODE=production
-    - PYTHONPATH=$PYTHONPATH:./src
 
 sphinx:
   configuration: docs/source/conf.py
@@ -27,3 +24,6 @@ submodules:
   include:
     - src/authnexus
 
+env:
+  - AUTHNEXUS_DOCS_MODE=production
+  - PYTHONPATH=$PYTHONPATH:./src
