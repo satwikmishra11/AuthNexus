@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  authnexus:
+    build: .
+    image: authnexus:latest
+    restart: unless-stopped
+    environment:
+      - AUTH_SECRET=${AUTH_SECRET}
+      - LOG_LEVEL=INFO
+      - CACHE_BACKEND=redis
+    ports:
+      - "8000:8000"
+    networks:
+      - authnet
+    volumes:
+      - audit_logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    configs:
+      - security_policy.yml
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    networks:
+      - authnet
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+networks:
+  authnet:
+    driver: bridge
+    internal: true
+
+volumes:
+  redis_data:
+  audit_logs:
+
+configs:
+  security_policy.yml:
+    file: ./config/security_policy.yml
