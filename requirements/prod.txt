@@ -1,0 +1,4 @@
+-r base.txt
+gunicorn>=21.2.0
+uvicorn[standard]>=0.23.2
+psutil>=5.9.5
