@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+venv/
+.env
+
+# Docker
+docker-compose.override.yml
+
+# Docs
+docs/_build/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Tests
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Security
+secrets.txt
+*.key
+*.pem
